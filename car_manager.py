@@ -2,7 +2,7 @@ from turtle import Turtle
 from board import SC_UNIT, SC_WIDTH, SC_HEIGHT
 import random
 
-COLORS = []
+COLORS = [(242, 233, 228), (201, 173, 167), (154, 140, 152), (74, 78, 105)]
 START_MOVE_DIST = SC_UNIT / 4
 
 
@@ -19,12 +19,11 @@ class CarManager:
         # TODO => Create a car object using the 'Turtle' class
         #  Car shape should be a rectangle (use a square shape and shapesize() method to adjust the shape further)
         new_car = Turtle("square")
-        new_car.shapesize(SC_UNIT / 10, SC_UNIT / 20)
-        new_car.color(229, 229, 229)
-        new_car.setheading(90)
         new_car.penup()
-        start_pos_rand = self.gen_random_pos()
-        new_car.goto(start_pos_rand)
+        new_car.shapesize(SC_UNIT / 10, SC_UNIT / 20)
+        new_car.color(random.choice(COLORS))
+        new_car.setheading(90)
+        new_car.goto(self.gen_random_pos())
         # TODO => Add the car object to the 'fleet' list
         self.fleet.append(new_car)
 

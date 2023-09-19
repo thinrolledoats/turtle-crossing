@@ -13,6 +13,7 @@ class Scoreboard(Turtle):
 
     def __init__(self):
         super().__init__()
+        self.penup()
         self.hideturtle()
         self.level = 1
         self.print_level()

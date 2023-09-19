@@ -7,7 +7,7 @@ from board import Scoreboard, SC_UNIT, SC_WIDTH, SC_HEIGHT
 screen = Screen()
 screen.colormode(255)
 screen.setup(width=SC_WIDTH, height=SC_HEIGHT)
-screen.bgcolor(0, 0, 0)
+screen.bgcolor(34, 34, 59)
 screen.title("Turtle Crossing")
 screen.tracer(0)
 

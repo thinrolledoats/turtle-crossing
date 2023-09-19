@@ -12,7 +12,7 @@ class Player(Turtle):
         super().__init__()
         self.shape("turtle")
         self.shapesize(SC_UNIT / 20, SC_UNIT / 20)
-        self.color(255, 255, 255)
+        self.color(252, 163, 17)
         self.setheading(90)
         self.penup()
         self.goto(START_POS)
