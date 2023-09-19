@@ -37,6 +37,12 @@ class CarManager:
             if car.xcor() < -SC_WIDTH:
                 car.goto(car.xcor() * -1, self.gen_random_pos()[1])
 
+    def check_col(self, turtle):
+        for car in self.fleet:
+            if car.distance(turtle) <= SC_UNIT:
+                return 1
+        return 0
+
     @staticmethod
     def gen_random_pos():
         x_rand = random.uniform(-SC_WIDTH, SC_WIDTH)
