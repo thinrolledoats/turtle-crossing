@@ -40,7 +40,7 @@ while game_is_on:
     # IF reset has returned 0, the player will LEVEL UP
     if player.reset_pos() == 0:
         # 1) Reset car fleet
-        car_fleet.reset_fleet(24)
+        car_fleet.reset_fleet()
         # 2) Update level (+1)
         score.update_level()
         # 3) Increment the movement speed

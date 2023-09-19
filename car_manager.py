@@ -37,11 +37,9 @@ class CarManager:
                 car.goto(car.xcor() * -1, self.gen_random_pos()[1])
 
     # TODO => Create a method that clears the entire existing 'fleet' and generates a new one
-    def reset_fleet(self, num_of_cars):
+    def reset_fleet(self):
         for car in self.fleet:
-            car.reset()
-        self.fleet = []
-        self.gen_fleet(num_of_cars)
+            car.goto(self.gen_random_pos())
 
     # TODO => Create a method that checks the 'player' collision with a 'car'
     def check_col(self, turtle):
