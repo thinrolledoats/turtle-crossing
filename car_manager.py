@@ -18,7 +18,7 @@ class CarManager:
 
     def add_car(self):
         # TODO => Create a car object using the 'Turtle' class
-        # Car shape should be a rectangle (use a square shape and shapesize() method to adjust the shape further)
+        #  Car shape should be a rectangle (use a square shape and shapesize() method to adjust the shape further)
         new_car = Turtle("square")
         new_car.shapesize(2, 1)
         new_car.color(229, 229, 229)
@@ -43,6 +43,13 @@ class CarManager:
             car.reset()
         self.fleet = []
         self.gen_fleet(num_of_cars)
+
+    # TODO => Create a method that checks the 'player' collision with a 'car'
+    def check_col(self, turtle):
+        for car in self.fleet:
+            if car.distance(turtle) <= SC_UNIT:
+                return 1
+        return 0
 
     @staticmethod
     def gen_random_pos():

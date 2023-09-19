@@ -21,19 +21,22 @@ screen.onkey(player.jump_right, "Right")
 screen.onkey(player.jump_left, "Left")
 
 # TODO => Create car behavior
-# Car behavior is created through two methods, which are handled inside the 'CarManager' class:
-# 1) gen_fleet => generates a fleet of cars using a specified number of cars
-# 2) move_fleet => constantly moves each car inside the fleet
-car_man = CarManager()
-car_man.gen_fleet(24)
+#  The behavior is achieved through two methods, which are handled inside the 'CarManager' class:
+#  1) gen_fleet => generates a fleet of cars using a specified number of cars
+#  2) move_fleet => constantly moves each car inside the fleet
+car_fleet = CarManager()
+car_fleet.gen_fleet(24)
 
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
-    car_man.move_fleet()
+    car_fleet.move_fleet()
     # TODO => Create a game reset functionality
-    # The functionality should be used when the player reaches a new level
+    #  The functionality should be used when the player reaches a new level
     reset = player.reset_pos()
     if reset == 0:
-        car_man.reset_fleet(24)
+        car_fleet.reset_fleet(24)
+    if car_fleet.check_col(player) == 1:
+        game_is_on = False
     screen.update()
+screen.exitonclick()
