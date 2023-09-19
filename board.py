@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 SC_UNIT = 20
-XR_FACTOR = 4
+XR_FACTOR = 6
 YR_FACTOR = 3
 SC_WIDTH = SC_UNIT * XR_FACTOR * 10
 SC_HEIGHT = SC_UNIT * YR_FACTOR * 10

@@ -3,8 +3,7 @@ from board import SC_UNIT, SC_WIDTH, SC_HEIGHT
 import random
 
 COLORS = []
-START_MOVE_DIST = 5
-# MOVE_INCREMENT = 10
+START_MOVE_DIST = SC_UNIT / 4
 
 
 class CarManager:
@@ -20,7 +19,7 @@ class CarManager:
         # TODO => Create a car object using the 'Turtle' class
         #  Car shape should be a rectangle (use a square shape and shapesize() method to adjust the shape further)
         new_car = Turtle("square")
-        new_car.shapesize(2, 1)
+        new_car.shapesize(SC_UNIT / 10, SC_UNIT / 20)
         new_car.color(229, 229, 229)
         new_car.setheading(90)
         new_car.penup()
@@ -55,7 +54,7 @@ class CarManager:
     @staticmethod
     def gen_random_pos():
         x_rand = random.uniform(-SC_WIDTH, SC_WIDTH)
-        y_rand = random.uniform(-(SC_HEIGHT / 2), (SC_HEIGHT / 2))
+        y_rand = random.uniform(-(SC_HEIGHT / 2) + SC_UNIT * 3, (SC_HEIGHT / 2) - SC_UNIT * 3)
         random_pos = (x_rand, y_rand)
         return random_pos
 

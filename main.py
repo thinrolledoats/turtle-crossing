@@ -2,7 +2,7 @@ import time
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
-from board import Scoreboard, SC_WIDTH, SC_HEIGHT
+from board import Scoreboard, SC_UNIT, SC_WIDTH, SC_HEIGHT
 
 screen = Screen()
 screen.colormode(255)
@@ -44,7 +44,7 @@ while game_is_on:
         # 2) Update level (+1)
         score.update_level()
         # 3) Increment the movement speed
-        move_increment += 10
+        move_increment += (SC_UNIT / 4)
     # IF the collision check has returned 1, the player will LOSE
     if car_fleet.check_col(player) == 1:
         game_is_on = False

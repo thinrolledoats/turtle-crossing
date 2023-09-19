@@ -1,7 +1,7 @@
 from turtle import Turtle
 from board import SC_UNIT, SC_HEIGHT
 START_POS = (0, -((SC_HEIGHT / 2) - SC_UNIT))
-MOVE_DIST = 10
+MOVE_DIST = SC_UNIT / 2
 JUMP_DIST = MOVE_DIST * 2
 FINISH_LINE_Y = 280
 
@@ -11,6 +11,7 @@ class Player(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("turtle")
+        self.shapesize(SC_UNIT / 20, SC_UNIT / 20)
         self.color(255, 255, 255)
         self.setheading(90)
         self.penup()
