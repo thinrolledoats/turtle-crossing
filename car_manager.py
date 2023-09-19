@@ -4,7 +4,7 @@ import random
 
 COLORS = []
 START_MOVE_DIST = 5
-MOVE_INCREMENT = 10
+# MOVE_INCREMENT = 10
 
 
 class CarManager:
@@ -29,10 +29,11 @@ class CarManager:
         # TODO => Add the car object to the 'fleet' list
         self.fleet.append(new_car)
 
-    def move_fleet(self):
+    def move_fleet(self, move_increment):
         for car in self.fleet:
-            # TODO => Move the 'car' by a constant amount in the 'X' direction
-            car.goto(car.xcor() - START_MOVE_DIST, car.ycor())
+            # TODO => Move the 'car' by a variable amount in the 'X' direction
+            #  Move speed increases each level by a constant amount
+            car.goto(car.xcor() - START_MOVE_DIST - move_increment, car.ycor())
             # TODO => Move the 'car' to the other end of the screen, if it reaches the 'X' boundary
             if car.xcor() < -SC_WIDTH:
                 car.goto(car.xcor() * -1, self.gen_random_pos()[1])
