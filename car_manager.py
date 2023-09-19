@@ -37,6 +37,13 @@ class CarManager:
             if car.xcor() < -SC_WIDTH:
                 car.goto(car.xcor() * -1, self.gen_random_pos()[1])
 
+    # TODO => Create a method that clears the entire existing 'fleet' and generates a new one
+    def reset_fleet(self, num_of_cars):
+        for car in self.fleet:
+            car.reset()
+        self.fleet = []
+        self.gen_fleet(num_of_cars)
+
     @staticmethod
     def gen_random_pos():
         x_rand = random.uniform(-SC_WIDTH, SC_WIDTH)

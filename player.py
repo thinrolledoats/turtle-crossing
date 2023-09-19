@@ -24,3 +24,13 @@ class Player(Turtle):
 
     def jump_left(self):
         self.goto(self.xcor() - JUMP_DIST, self.ycor())
+
+    # TODO => Create a method that resets the 'player' position once they reach the top of the screen
+    # The method should return 0 if it has successfully returned the 'player' to the starting position
+    def reset_pos(self):
+        if self.ycor() >= SC_HEIGHT / 2:
+            self.goto(START_POS)
+            return 0
+        return 1
+
+

@@ -31,4 +31,9 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     car_man.move_fleet()
+    # TODO => Create a game reset functionality
+    # The functionality should be used when the player reaches a new level
+    reset = player.reset_pos()
+    if reset == 0:
+        car_man.reset_fleet(24)
     screen.update()
