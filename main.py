@@ -47,6 +47,8 @@ while game_is_on:
         move_increment += (SC_UNIT / 4)
     # IF the collision check has returned 1, the player will LOSE
     if car_fleet.check_col(player) == 1:
+        score.game_over()
+        player.hideturtle()
         game_is_on = False
     screen.update()
 screen.exitonclick()
