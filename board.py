@@ -19,7 +19,7 @@ class Scoreboard(Turtle):
         self.print_level()
         # TODO => Create a 'high score' feature
         #  The method should store the 'high score' inside a text file
-        with open('high_score.txt', mode="r") as file:
+        with open('data/high_score.txt', mode="r") as file:
             self.high_score = int(file.read())
         self.print_high_score()
 
@@ -33,7 +33,7 @@ class Scoreboard(Turtle):
     def print_high_score(self):
         if self.level > self.high_score:
             self.high_score = self.level - 1
-            with open('high_score.txt', mode="w") as file:
+            with open('data/high_score.txt', mode="w") as file:
                 file.write(str(self.high_score))
         self.goto((SC_WIDTH / 2) - SC_UNIT, (SC_HEIGHT / 2) - SC_UNIT * YR_FACTOR)
         self.write(f"HIGH: {self.high_score}", move=False, align='right', font=FONT)
