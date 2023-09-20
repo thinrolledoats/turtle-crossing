@@ -42,7 +42,7 @@ while game_is_on:
         # 1) Reset car fleet
         car_fleet.reset_fleet()
         # 2) Update level (+1)
-        score.update_level()
+        score.update_board()
         # 3) Increment the movement speed
         move_increment += (SC_UNIT / 4)
     # IF the collision check has returned 1, the player will LOSE
